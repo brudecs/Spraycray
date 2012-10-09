@@ -1,4 +1,4 @@
-## Contents
+## Project Outline
 
 * **Manager**
 	- All managers extend this class (screen manager, background manager, etc.
