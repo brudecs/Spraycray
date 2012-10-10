@@ -9,7 +9,7 @@ public class SprayKray extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spray_kray);
+        setContentView(R.layout.menu);
     }
 
     @Override
