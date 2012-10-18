@@ -11,9 +11,33 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_action_search=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int menuback=0x7f020002;
+        public static final int foo_walk_forward0001=0x7f020000;
+        public static final int foo_walk_forward0002=0x7f020001;
+        public static final int foo_walk_forward0003=0x7f020002;
+        public static final int foo_walk_forward0004=0x7f020003;
+        public static final int foo_walk_forward0005=0x7f020004;
+        public static final int foo_walk_forward0006=0x7f020005;
+        public static final int foo_walk_forward0007=0x7f020006;
+        public static final int foo_walk_forward0008=0x7f020007;
+        public static final int foo_walk_forward0009=0x7f020008;
+        public static final int foo_walk_forward0010=0x7f020009;
+        public static final int foo_walk_forward0011=0x7f02000a;
+        public static final int foo_walk_forward0012=0x7f02000b;
+        public static final int foo_walk_forward0013=0x7f02000c;
+        public static final int foo_walk_forward0014=0x7f02000d;
+        public static final int foo_walk_forward0015=0x7f02000e;
+        public static final int foo_walk_forward0016=0x7f02000f;
+        public static final int foo_walk_forward0017=0x7f020010;
+        public static final int foo_walk_forward0018=0x7f020011;
+        public static final int foo_walk_forward0019=0x7f020012;
+        public static final int foo_walk_forward0020=0x7f020013;
+        public static final int foo_walk_forward0021=0x7f020014;
+        public static final int foo_walk_forward0022=0x7f020015;
+        public static final int foo_walk_forward0023=0x7f020016;
+        public static final int foo_walk_forward0024=0x7f020017;
+        public static final int ic_action_search=0x7f020018;
+        public static final int ic_launcher=0x7f020019;
+        public static final int menuback=0x7f02001a;
     }
     public static final class id {
         public static final int button1=0x7f070000;
