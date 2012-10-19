@@ -14,8 +14,9 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+  
         <activity
-            android:name=".SprayKray"
+            android:name=".GameInitializer"
             android:label="@string/title_activity_spray_kray" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,17 +24,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
-        <activity
-            android:name=".WorldActivity"
-            android:label="@string/title_activity_spray_kray" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        
+  
     </application>
 
 </manifest>
