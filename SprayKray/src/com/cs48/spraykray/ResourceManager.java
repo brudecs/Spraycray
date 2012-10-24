@@ -67,7 +67,7 @@ public class ResourceManager {
 	private Bitmap foo_forward_walk_image_21;
 	private Bitmap foo_forward_walk_image_22;
 	private Bitmap foo_forward_walk_image_23;
-	private Bitmap foo_forward_walk_image_24;
+
 	private Bitmap background_001;
 	private Bitmap background_002;
 	private Bitmap background_003;
@@ -191,9 +191,8 @@ public class ResourceManager {
 		foo_forward_walk_image_21 = BitmapFactory.decodeResource(context.getResources(), R.drawable.foo_walk_forward0021);
 		foo_forward_walk_image_22 = BitmapFactory.decodeResource(context.getResources(), R.drawable.foo_walk_forward0022);
 		foo_forward_walk_image_23 = BitmapFactory.decodeResource(context.getResources(), R.drawable.foo_walk_forward0023);
-		foo_forward_walk_image_24 = BitmapFactory.decodeResource(context.getResources(), R.drawable.foo_walk_forward0024);
 
-		foo_forward_walk_image_set = new ArrayList<Bitmap>(24);
+		foo_forward_walk_image_set = new ArrayList<Bitmap>(23);
 		foo_forward_walk_image_set.add(0, foo_forward_walk_image_01);
 		foo_forward_walk_image_set.add(1, foo_forward_walk_image_02);
 		foo_forward_walk_image_set.add(2, foo_forward_walk_image_03);
@@ -217,7 +216,6 @@ public class ResourceManager {
 		foo_forward_walk_image_set.add(20, foo_forward_walk_image_21);
 		foo_forward_walk_image_set.add(21, foo_forward_walk_image_22);
 		foo_forward_walk_image_set.add(22, foo_forward_walk_image_23);
-		foo_forward_walk_image_set.add(23, foo_forward_walk_image_24);
 		
 		background_001 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_01);
 		background_001 = Bitmap.createScaledBitmap(background_001, DISPLAY_WIDTH, DISPLAY_HEIGHT, true);

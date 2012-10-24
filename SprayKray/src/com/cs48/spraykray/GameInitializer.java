@@ -1,18 +1,23 @@
 package com.cs48.spraykray;
 
+import java.io.IOException;
+
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 
 public class GameInitializer extends Activity {
 	
 	//Game Modules
-	GameState state;
+	MediaPlayer mp=null;
 	ResourceManager resourceManager;
     ScrollSurface scrollUI;
+    Intent sound;
 	
-	
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +30,8 @@ public class GameInitializer extends Activity {
         resourceManager = new ResourceManager(displayMetrics);       
         scrollUI = new ScrollSurface(this, resourceManager, displayMetrics);
         setContentView(scrollUI);      
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);     
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);  
+        mp = MediaPlayer.create(this, R.raw.mario_hip_hop);
     }
     
 	@Override
@@ -40,6 +46,20 @@ public class GameInitializer extends Activity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		scrollUI.resume();
+		mp.setLooping(true);
+		try {
+			mp.prepare();
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        
+        mp.start();
+        
 	}
 
     /**
