@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.DisplayMetrics;
 
 public class ResourceManager {
+	
+	//Private class members
+	private int currentMode=0;
 
 	//Game mode flags to be used with load() method
 	public static final int MENU_MODE = 1001;
@@ -64,13 +68,19 @@ public class ResourceManager {
 	private Bitmap foo_forward_walk_image_22;
 	private Bitmap foo_forward_walk_image_23;
 	private Bitmap foo_forward_walk_image_24;
+	private Bitmap background_001;
+	private Bitmap background_002;
+	private Bitmap background_003;
+	private Bitmap background_004;
+	
+	final int DISPLAY_WIDTH;
+	final int DISPLAY_HEIGHT;
 	
 	
 	//Constructor
-	ResourceManager(){
-		
-		
-		
+	ResourceManager(DisplayMetrics metrics){
+		DISPLAY_WIDTH = metrics.widthPixels;
+		DISPLAY_HEIGHT = metrics.heightPixels;		
 	}
 	
 	
@@ -84,12 +94,15 @@ public class ResourceManager {
 	boolean load(Context context, int flag){
 		switch(flag){
 		case 1001:
+			currentMode=1001;
 			initializeMenuObjects(context);
 			return true;
 		case 1002:
+			currentMode=1002;
 			initializeScrollObjects(context);
 			return true;
 		case 1003:
+			currentMode=1003;
 			initializeTagObjects(context);
 			return true;
 	    default:
@@ -107,32 +120,47 @@ public class ResourceManager {
 	 * @return ArrayList<Bitmap>
 	 */
 	ArrayList<Bitmap> getImageSet(int flag){
-		switch(flag){
-		case 2001:
-			return foo_forward_walk_image_set;
-		case 2002:
-			return foo_up_walk_image_set;
-		case 2003:
-			return foo_down_walk_image_set;
-		case 2004:
-			return background_image_set;
-		case 2005:
-			return tag01_image_set;
-		case 2006:
-			return tag02_image_set;
-		case 2007:
-			return tag03_image_set;
-		case 2008:
-			return tag04_image_set;
-		case 2009:
-			return tag05_image_set;
-		case 2010:
-			return tag06_image_set;
+		
+		switch(currentMode){
+		case 1001:
+			switch(flag){
+			default:
+				return null;
+			}
+		case 1002:
+			switch(flag){
+			case 2001:
+				return foo_forward_walk_image_set;
+			case 2002:
+				return foo_up_walk_image_set;
+			case 2003:
+				return foo_down_walk_image_set;
+			case 2004:
+				return background_image_set;
+			default:
+				return null;
+			}
+		case 1003:
+			switch(flag){
+			case 2005:
+				return tag01_image_set;
+			case 2006:
+				return tag02_image_set;
+			case 2007:
+				return tag03_image_set;
+			case 2008:
+				return tag04_image_set;
+			case 2009:
+				return tag05_image_set;
+			case 2010:
+				return tag06_image_set;
+			default:
+				return null;
+			}	
 		default:
 			return null;
-		}	
-	}
-	
+		}
+	}	
 	private void initializeMenuObjects(Context context){
 		
 		
@@ -191,6 +219,20 @@ public class ResourceManager {
 		foo_forward_walk_image_set.add(22, foo_forward_walk_image_23);
 		foo_forward_walk_image_set.add(23, foo_forward_walk_image_24);
 		
+		background_001 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_01);
+		background_001 = Bitmap.createScaledBitmap(background_001, DISPLAY_WIDTH, DISPLAY_HEIGHT, true);
+		background_002 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_02);
+		background_002 = Bitmap.createScaledBitmap(background_002, DISPLAY_WIDTH, DISPLAY_HEIGHT, true);
+
+		//	background_003 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_03);
+	//	background_004 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_04);
+
+		background_image_set = new ArrayList<Bitmap>(4);
+		background_image_set.add(0, background_001);
+		background_image_set.add(1, background_002);
+		//background_image_set.add(2, background_003);
+		//background_image_set.add(3, background_004);
+
 	}
 	
 	private void initializeTagObjects(Context context){

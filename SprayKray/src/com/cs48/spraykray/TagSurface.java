@@ -4,17 +4,18 @@ import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.view.MotionEvent;
 
-public class GLTouchScreenSurfaceView extends GLSurfaceView {
+public class TagSurface extends GLSurfaceView {
 
 	private boolean TOUCH_SCREEN_ENABLED = false;
 
 	
-	public GLTouchScreenSurfaceView(Context context) {
+	public TagSurface(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
 	}
 	
 	//Override
+	@Override
 	public boolean onTouchEvent(MotionEvent e){
 		
 		if(!TOUCH_SCREEN_ENABLED)
