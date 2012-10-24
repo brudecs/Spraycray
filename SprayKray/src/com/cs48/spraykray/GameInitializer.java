@@ -32,6 +32,7 @@ public class GameInitializer extends Activity {
         setContentView(scrollUI);      
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);  
         mp = MediaPlayer.create(this, R.raw.mario_hip_hop);
+		mp.setLooping(true);
     }
     
 	@Override
@@ -39,6 +40,7 @@ public class GameInitializer extends Activity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		scrollUI.pause();
+		mp.pause();
 	}
     
 	@Override
@@ -46,7 +48,6 @@ public class GameInitializer extends Activity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		scrollUI.resume();
-		mp.setLooping(true);
 		try {
 			mp.prepare();
 		} catch (IllegalStateException e) {
