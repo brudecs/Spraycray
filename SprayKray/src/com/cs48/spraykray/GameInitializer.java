@@ -31,7 +31,7 @@ public class GameInitializer extends Activity {
         scrollUI = new ScrollSurface(this, resourceManager, displayMetrics);
         setContentView(scrollUI);      
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);  
-        mp = MediaPlayer.create(this, R.raw.mario_hip_hop);
+        mp = MediaPlayer.create(this, R.raw.soundtrack_level_01);
 		mp.setLooping(true);
     }
     

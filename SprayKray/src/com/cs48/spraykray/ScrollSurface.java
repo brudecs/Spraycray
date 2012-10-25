@@ -61,7 +61,7 @@ public class ScrollSurface extends SurfaceView implements Runnable {
 					continue;
 				}
 				canvas = surfaceHolder.lockCanvas();
-				canvas.drawRGB(0, 0, 0);
+				canvas.drawRGB(0, 50, 117);
 				drawBackground(i);
 				drawFoo(i);
 				surfaceHolder.unlockCanvasAndPost(canvas);
@@ -88,11 +88,12 @@ public class ScrollSurface extends SurfaceView implements Runnable {
 	 * @param frameNumber
 	 */
 	private void drawBackground(int frameNumber){
+		drawStreet();
 		Bitmap buffer_1 = background.get(image_buffer_1);
 		Bitmap buffer_2 = background.get(image_buffer_2);
 		
-		canvas.drawBitmap(buffer_1, X_buffer_1, 0, null);
-		canvas.drawBitmap(buffer_2, X_buffer_2, 0, null);
+		canvas.drawBitmap(buffer_1, X_buffer_1, (DISPLAY_HEIGHT*55)/1000 , null);
+	    canvas.drawBitmap(buffer_2, X_buffer_2, (DISPLAY_HEIGHT*55)/1000, null);
 		X_buffer_1-=X_SHIFT;
 		X_buffer_2-=X_SHIFT;
 		
@@ -102,6 +103,16 @@ public class ScrollSurface extends SurfaceView implements Runnable {
 			image_buffer_2=temp;
 			X_buffer_1=X_buffer_2;
 			X_buffer_2+=DISPLAY_WIDTH;
+		}
+	}
+	
+	private void drawStreet(){
+		Bitmap street = background.get(2);
+		int tile_start_Y=(DISPLAY_HEIGHT*3)/10;
+		for(int i=X_buffer_1; i<DISPLAY_WIDTH; i+=street.getWidth()){
+			for(int j=tile_start_Y; j<DISPLAY_HEIGHT; j+=street.getHeight()){
+				canvas.drawBitmap(street, i, j, null);
+			}
 		}
 	}
 	

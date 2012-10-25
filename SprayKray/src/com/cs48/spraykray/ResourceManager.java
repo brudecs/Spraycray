@@ -72,6 +72,8 @@ public class ResourceManager {
 	private Bitmap background_002;
 	private Bitmap background_003;
 	private Bitmap background_004;
+	private Bitmap texture_street;
+	
 	
 	final int DISPLAY_WIDTH;
 	final int DISPLAY_HEIGHT;
@@ -218,16 +220,17 @@ public class ResourceManager {
 		foo_forward_walk_image_set.add(22, foo_forward_walk_image_23);
 		
 		background_001 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_01);
-		background_001 = Bitmap.createScaledBitmap(background_001, DISPLAY_WIDTH, DISPLAY_HEIGHT, true);
+		background_001 = Bitmap.createScaledBitmap(background_001, (DISPLAY_WIDTH*1600)/1667, (DISPLAY_HEIGHT*647)/1000, true);
 		background_002 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_02);
-		background_002 = Bitmap.createScaledBitmap(background_002, DISPLAY_WIDTH, DISPLAY_HEIGHT, true);
-
+		background_002 = Bitmap.createScaledBitmap(background_002, DISPLAY_WIDTH, (DISPLAY_HEIGHT*647)/1000, true);		
+		texture_street = BitmapFactory.decodeResource(context.getResources(), R.drawable.texture_street);
 		//	background_003 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_03);
 	//	background_004 = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_04);
 
 		background_image_set = new ArrayList<Bitmap>(4);
 		background_image_set.add(0, background_001);
 		background_image_set.add(1, background_002);
+		background_image_set.add(2, texture_street);
 		//background_image_set.add(2, background_003);
 		//background_image_set.add(3, background_004);
 
