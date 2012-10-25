@@ -67,25 +67,30 @@ public final class R {
         public static final int splash_02=0x7f020035;
         public static final int tag_01_painted=0x7f020036;
         public static final int tag_01_unpainted=0x7f020037;
+        public static final int wolf_splash=0x7f020038;
+    }
+    public static final class layout {
+        public static final int splash=0x7f030000;
     }
     public static final class raw {
-        public static final int foo_gun_reload_01=0x7f030000;
-        public static final int foo_gun_reload_02=0x7f030001;
-        public static final int foo_gun_shot_01=0x7f030002;
-        public static final int foo_gun_shot_02=0x7f030003;
-        public static final int mario_hip_hop=0x7f030004;
-        public static final int mario_techno=0x7f030005;
-        public static final int shot_3=0x7f030006;
-        public static final int shot_with_hit_1=0x7f030007;
-        public static final int shot_with_pass_noise_1=0x7f030008;
-        public static final int shot_with_pass_noise_2=0x7f030009;
-        public static final int soundtrack_level_01=0x7f03000a;
+        public static final int foo_gun_reload_01=0x7f040000;
+        public static final int foo_gun_reload_02=0x7f040001;
+        public static final int foo_gun_shot_01=0x7f040002;
+        public static final int foo_gun_shot_02=0x7f040003;
+        public static final int mario_hip_hop=0x7f040004;
+        public static final int mario_techno=0x7f040005;
+        public static final int shot_3=0x7f040006;
+        public static final int shot_with_hit_1=0x7f040007;
+        public static final int shot_with_pass_noise_1=0x7f040008;
+        public static final int shot_with_pass_noise_2=0x7f040009;
+        public static final int soundtrack_level_01=0x7f04000a;
+        public static final int wolf=0x7f04000b;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
-        public static final int title_activity_spray_kray=0x7f040001;
+        public static final int app_name=0x7f050000;
+        public static final int title_activity_spray_kray=0x7f050001;
     }
     public static final class style {
-        public static final int AppTheme=0x7f050000;
+        public static final int AppTheme=0x7f060000;
     }
 }
